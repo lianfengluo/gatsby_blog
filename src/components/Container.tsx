@@ -1,6 +1,6 @@
 import React from 'react';
 import { ContainerWrapper } from 'src/wrappers';
-import { Nav } from 'src/components';
+import { Nav, Footer } from 'src/components';
 
 export const Container: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -9,6 +9,7 @@ export const Container: React.FC<{ children: React.ReactNode }> = ({
     <ContainerWrapper>
       <Nav />
       {children}
+      <Footer />
     </ContainerWrapper>
   );
 };

@@ -6,13 +6,8 @@ export const NavWrapper = styled.nav`
   display: flex;
   align-items: center;
 
-  a {
-    height: 100%;
-    overflow: hidden;
-    img {
-      max-height: 100%;
-      object-fit: contain;
-    }
+  & img {
+    height: 30px;
   }
 
   @media ${(props) => props.theme.breakpoints.tablet} {
