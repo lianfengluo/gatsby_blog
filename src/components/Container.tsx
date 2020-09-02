@@ -1,8 +1,14 @@
 import React from 'react';
 import { ContainerWrapper } from 'src/wrappers';
+import { Nav } from 'src/components';
 
 export const Container: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  return <ContainerWrapper>{children}</ContainerWrapper>;
+  return (
+    <ContainerWrapper>
+      <Nav />
+      {children}
+    </ContainerWrapper>
+  );
 };
