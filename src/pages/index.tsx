@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Container } from 'src/components';
+import { Container, FeatureImage } from 'src/components';
 
 const Index: React.FC<{}> = () => {
   return (
     <Container>
-      <h1>Hello world</h1>
+      <FeatureImage />
     </Container>
   );
 };
