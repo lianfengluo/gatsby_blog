@@ -9,6 +9,7 @@ export default {
     dark1: 'hsl(227, 2%, 12%)',
     dark2: 'hsl(227, 2%, 26%)',
     dark3: 'hsl(227, 2%, 64%)',
+    dark4: 'hsl(227, 2%, 90%)',
     light1: 'hsl(0, 0%, 97%)',
     light2: 'hsl(0, 0%, 99%)',
   },

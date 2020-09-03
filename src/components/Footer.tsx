@@ -4,6 +4,7 @@ import {
   FooterWrapper,
   FooterSocialIcons,
   FooterSocialWrapper,
+  P,
 } from 'src/wrappers';
 
 export const Footer: React.FC<{}> = () => {
@@ -46,7 +47,9 @@ export const Footer: React.FC<{}> = () => {
             <img src={data.github.publicURL} alt="github icon" />
           </a>
         </FooterSocialIcons>
-        <p>© 2020 Richard</p>
+        <P size="s" color="dark3">
+          © 2020 Richard
+        </P>
       </FooterSocialWrapper>
     </FooterWrapper>
   );

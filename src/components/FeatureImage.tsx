@@ -1,5 +1,5 @@
 import React from 'react';
-import Img, { FixedObject, FluidObject } from 'gatsby-image';
+import Img, { FluidObject } from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import { FeatureImageWrapper } from 'src/wrappers';
 

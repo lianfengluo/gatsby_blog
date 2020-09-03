@@ -8,10 +8,13 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-  body, html {
+  body, html, #___gatsby {
     font-family: ${(props) => props.theme.fonts.main};
     height: 100%;
     background-color: ${(props) => props.theme.colors.light1};
+  }
+  #gatsby-focus-wrapper {
+    height: 100%;
   }
 `;
 

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const FooterWrapper = styled.footer`
-  grid-column: 2 / span 12;
+  grid-column: 1 / -1;
   min-height: 11.25rem;
-  padding: 3rem 0;
+  padding: 3rem 0 0 0;
+  background-color: ${(props) => props.theme.colors.dark4};
   justify-content: center;
   display: flex;
   align-items: flex-start;
@@ -32,12 +33,13 @@ export const FooterSocialIcons = styled.div`
 
   & img {
     padding: 0 1rem;
-    transition: opacity 0.3s ease;
+    transition: all 1s ease;
     height: 22px;
 
     &:hover,
     &:focus {
       opacity: 0.5;
+      height: 28px;
     }
   }
 `;
