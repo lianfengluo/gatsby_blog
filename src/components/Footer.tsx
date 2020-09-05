@@ -48,7 +48,7 @@ export const Footer: React.FC<{}> = () => {
           </a>
         </FooterSocialIcons>
         <P size="s" color="dark3">
-          © 2020 Richard
+          © 2020 Richard 👋🏼👋🏼👋🏼👋🏼
         </P>
       </FooterSocialWrapper>
     </FooterWrapper>

@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const ContentWrapper = styled.main`
+interface PropsItf {
+  theme: any;
+}
+
+export const ContentWrapper = styled.main<PropsItf>`
   grid-column: 4 / span 8;
   grid-row: 3 / span5;
   background-color: ${(props) => props.theme.colors.light2};

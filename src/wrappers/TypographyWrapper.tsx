@@ -2,7 +2,17 @@ import styled from 'styled-components';
 
 interface PItf {
   size?: string;
-  margin?: number;
+  margin?: string;
+  textDecoration?: string;
+  color?: string;
+  textAlign?: string;
+  weight?: string;
+  theme: any;
+}
+
+interface HeaderItf {
+  size?: string;
+  margin?: string;
   textDecoration?: string;
   color?: string;
   textAlign?: string;
@@ -25,7 +35,7 @@ export const P = styled.p<PItf>`
     }
   }};
 
-  font-size: ${(props: PItf) => {
+  line-height: ${(props: PItf) => {
     switch (props.size) {
       case 'm':
         return '1.4375rem';
@@ -68,7 +78,7 @@ export const P = styled.p<PItf>`
   text-align: ${(props: PItf) => props.textAlign || 'left'};
 `;
 
-export const H1 = styled.h1`
+export const H1 = styled.h1<HeaderItf>`
   font-size: 2.25rem;
   line-height: 2.5rem;
   color: ${(props: any) => {
@@ -93,7 +103,7 @@ export const H1 = styled.h1`
   margin: ${(props: any) => props.margin || 0};
 `;
 
-export const H2 = styled.h2`
+export const H2 = styled.h2<HeaderItf>`
   font-size: 1.5rem;
   line-height: 1.875rem;
   color: ${(props: any) => {
