@@ -11,9 +11,7 @@ interface stylePropsItf {
   theme: any;
 }
 
-export const ButtonWrapper = styled((props: ButtonWrapperItf) => (
-  <Link {...props} />
-))`
+export const ButtonWrapper = styled(Link)`
   padding: 0.5rem 0.75rem;
   background-color: ${(props: stylePropsItf) => props.theme.colors.main1};
   border-radius: 0.5rem;
@@ -26,6 +24,6 @@ export const ButtonWrapper = styled((props: ButtonWrapperItf) => (
 
   &:hover,
   &:focus {
-    filter: brightness (100%);
+    filter: brightness(120%);
   }
 `;
