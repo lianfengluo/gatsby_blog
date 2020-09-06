@@ -8,3 +8,4 @@ export * from './ContentCardWrapper';
 export * from './ButtonWrapper';
 export * from './PaginationWrapper';
 export * from './postWrapper';
+export * from './TableWrapper';
