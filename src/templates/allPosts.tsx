@@ -19,9 +19,8 @@ interface AllPostsItf {
   data: any;
 }
 
-const allPosts = ({ pageContext, data }: AllPostsItf) => {
+const AllPosts: React.FC<AllPostsItf> = ({ pageContext, data }) => {
   const { currentPage, numPages } = pageContext;
-  console.log(currentPage);
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
   const previousPage = currentPage - 1 === 1 ? '/' : `/${currentPage - 1}`;
@@ -58,7 +57,7 @@ const allPosts = ({ pageContext, data }: AllPostsItf) => {
   );
 };
 
-export default allPosts;
+export default AllPosts;
 
 export const pageQuery = graphql`
   query AllPostsQuery($skip: Int!, $limit: Int!) {
