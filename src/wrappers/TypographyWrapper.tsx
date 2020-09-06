@@ -4,7 +4,7 @@ interface PItf {
   size?: 'xs' | 's' | 'm';
   margin?: string;
   textDecoration?: string;
-  color?: 'dark1' | 'dark2' | 'dark3' | 'light1' | 'light2';
+  color?: 'dark1' | 'dark2' | 'dark3' | 'light1' | 'light2' | 'red';
   textAlign?: string;
   weight?: 'normal' | 'bold';
   theme: any;
@@ -14,7 +14,7 @@ interface HeaderItf {
   size?: string;
   margin?: string;
   textDecoration?: string;
-  color?: 'dark1' | 'dark2' | 'dark3' | 'light1' | 'light2';
+  color?: 'dark1' | 'dark2' | 'dark3' | 'light1' | 'light2' | 'red';
   textAlign?: string;
   weight?: 'normal' | 'bold';
   theme: any;
@@ -71,6 +71,8 @@ export const P = styled.p<PItf>`
         return props.theme.colors.light1;
       case 'light2':
         return props.theme.colors.light2;
+      case 'red':
+        return props.theme.colors.red;
       default:
         return props.theme.colors.dark1;
     }
@@ -93,6 +95,8 @@ export const H1 = styled.h1<HeaderItf>`
         return props.theme.colors.light1;
       case 'light2':
         return props.theme.colors.light2;
+      case 'red':
+        return props.theme.colors.red;
       default:
         return props.theme.colors.dark1;
     }

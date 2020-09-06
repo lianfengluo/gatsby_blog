@@ -7,6 +7,7 @@ const path = require('path');
 module.exports = {
   /* Your site config here */
   plugins: [
+    `gatsby-plugin-graphql-codegen`,
     {
       resolve: 'gatsby-plugin-root-import',
       options: {

@@ -6,13 +6,13 @@ interface PropsItf {
 
 export const PostWrapper = styled.main<PropsItf>`
   grid-column: 4 / span 8;
-  grid-row: 3 / span5;
+  grid-row: 3 / span 5;
   background-color: ${(props) => props.theme.colors.light2};
   padding: ${(props) =>
     `${props.theme.spacings.xl} ${props.theme.spacings.xxl}`};
-  box-shadow: ${(props) => props.theme.shadows.shadow2};
+  box-shadow: ${(props) => props.theme.shadows.shadow1};
   display: relative;
-  z-index: 1;
+  z-index: 10;
 
   h1,
   h2,
@@ -58,7 +58,7 @@ export const PostWrapper = styled.main<PropsItf>`
   p {
     font: 400 1.125rem;
     line-height: 1.875rem;
-    color: ${(props) => props.theme.colors.light2};
+    color: ${(props) => props.theme.colors.dark2};
     margin-top: 2rem;
   }
   a {
@@ -74,8 +74,15 @@ export const PostWrapper = styled.main<PropsItf>`
   del {
     text-decoration: line-through;
   }
+  pre {
+    padding: 1rem 0.5rem;
+    border-radius: 0.2rem;
+  }
+
   blockquote p {
-    font: italic 1.5rem 2.125rem;
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 2.125rem;
     text-align: center;
     max-width: 36rem;
     margin: 3rem auto;
@@ -90,10 +97,13 @@ export const PostWrapper = styled.main<PropsItf>`
   }
 
   code {
-    font: 1rem 1.875rem ${(props) => props.theme.fonts.code};
+    font-size: 1rem;
+    font-family: ${(props) => props.theme.fonts.code};
+    line-height: 1.875rem;
     color: ${(props) => props.theme.colors.light1};
     background-color: ${(props) => props.theme.colors.dark3};
     padding: 0 0.3rem;
+    margin: 3rem auto;
   }
 
   hr {
@@ -108,7 +118,8 @@ export const PostWrapper = styled.main<PropsItf>`
     width: 100%;
     border-spacing: 0.25rem;
     border-collapse: collapse;
-    font: 400 1rem 1.5rem;
+    font: 400 1rem;
+    line-height: 1.5rem;
   }
   th {
     font-weight: 700;

@@ -16,7 +16,20 @@ interface AllPostsItf {
     numPages: number;
     currentPage: number;
   };
-  data: any;
+  data: {
+    allMdx: {
+      edges: {
+        node: {
+          frontmatter: {
+            slug: string;
+            title: string;
+            excerpt: string;
+            date: string;
+          };
+        };
+      }[];
+    };
+  };
 }
 
 const AllPosts: React.FC<AllPostsItf> = ({ pageContext, data }) => {
@@ -47,12 +60,14 @@ const AllPosts: React.FC<AllPostsItf> = ({ pageContext, data }) => {
           ></ContentCard>
         ))}
       </Content>
-      <Pagination
-        isFirst={isFirst}
-        isLast={isLast}
-        prevPage={previousPage}
-        nextPage={nextPage}
-      />
+      {numPages !== 1 && (
+        <Pagination
+          isFirst={isFirst}
+          isLast={isLast}
+          prevPage={previousPage}
+          nextPage={nextPage}
+        />
+      )}
     </Container>
   );
 };

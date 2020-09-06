@@ -3,12 +3,27 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Container, Post, FeatureImage } from 'src/components';
 import { H1 } from 'src/wrappers';
+import { FluidObject } from 'gatsby-image';
 
 interface AllPostsItf {
   pageContext: {
     id: string;
   };
-  data: any;
+  data: {
+    mdx: {
+      body: string;
+      frontmatter: {
+        slug: string;
+        title: string;
+        featureImage: {
+          childImageSharp: {
+            fluid: FluidObject | FluidObject[];
+          };
+        };
+        date: string;
+      };
+    };
+  };
 }
 const SinglePost: React.FC<AllPostsItf> = ({ data }) => {
   const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fluid;

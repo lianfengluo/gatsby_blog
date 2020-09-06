@@ -6,7 +6,7 @@ interface PropsItf {
 
 export const ContentWrapper = styled.main<PropsItf>`
   grid-column: 4 / span 8;
-  grid-row: 3 / span5;
+  grid-row: 3 / span 5;
   background-color: ${(props) => props.theme.colors.light2};
   padding: ${(props) =>
     `${props.theme.spacings.xl} ${props.theme.spacings.xxl}`};

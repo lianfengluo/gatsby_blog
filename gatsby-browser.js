@@ -1,8 +1,10 @@
 import React from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { MDXProvider } from '@mdx-js/react';
-import { Table } from './src/components';
+import { preToCodeBlock } from 'mdx-utils';
+import { Table, Code } from './src/components';
 import Theme from './src/themes/theme';
+require('./language-tabs.css');
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -22,6 +24,17 @@ const GlobalStyles = createGlobalStyle`
 
 const components = {
   table: Table,
+  pre: (preProps) => {
+    const props = preToCodeBlock(preProps);
+    // if there's a codeString and some props, we passed the test
+    if (props) {
+      return <Code {...props} />;
+    } else {
+      // it's possible to have a pre without a code in it
+      return <pre {...preProps} />;
+    }
+  },
+  wrapper: ({ children }) => <>{children}</>,
 };
 
 export const wrapRootElement = ({ element }) => (
