@@ -6,3 +6,4 @@ export * from './ContentWrapper';
 export * from './TypographyWrapper';
 export * from './ContentCardWrapper';
 export * from './ButtonWrapper';
+export * from './PaginationWrapper';

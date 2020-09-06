@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 interface PItf {
-  size?: string;
+  size?: 'xs' | 's' | 'm';
   margin?: string;
   textDecoration?: string;
-  color?: string;
+  color?: 'dark1' | 'dark2' | 'dark3' | 'light1' | 'light2';
   textAlign?: string;
-  weight?: string;
+  weight?: 'normal' | 'bold';
   theme: any;
 }
 
@@ -14,9 +14,9 @@ interface HeaderItf {
   size?: string;
   margin?: string;
   textDecoration?: string;
-  color?: string;
+  color?: 'dark1' | 'dark2' | 'dark3' | 'light1' | 'light2';
   textAlign?: string;
-  weight?: string;
+  weight?: 'normal' | 'bold';
   theme: any;
 }
 
@@ -65,7 +65,7 @@ export const P = styled.p<PItf>`
         return props.theme.colors.dark1;
       case 'dark2':
         return props.theme.colors.dark2;
-      case 'drak3':
+      case 'dark3':
         return props.theme.colors.dark3;
       case 'light1':
         return props.theme.colors.light1;
@@ -87,7 +87,7 @@ export const H1 = styled.h1<HeaderItf>`
         return props.theme.colors.dark1;
       case 'dark2':
         return props.theme.colors.dark2;
-      case 'drak3':
+      case 'dark3':
         return props.theme.colors.dark3;
       case 'light1':
         return props.theme.colors.light1;
@@ -112,7 +112,7 @@ export const H2 = styled.h2<HeaderItf>`
         return props.theme.colors.dark1;
       case 'dark2':
         return props.theme.colors.dark2;
-      case 'drak3':
+      case 'dark3':
         return props.theme.colors.dark3;
       case 'light1':
         return props.theme.colors.light1;

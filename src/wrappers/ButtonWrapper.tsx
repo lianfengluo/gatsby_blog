@@ -1,11 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-
-interface ButtonWrapperItf {
-  children: React.ReactNode;
-  to: string;
-}
 
 interface stylePropsItf {
   theme: any;
