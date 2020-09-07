@@ -10,30 +10,30 @@ import {
 } from 'src/components';
 import { H1, P } from 'src/wrappers';
 
-// interface PostsItf {
-//   pageContext: {
-//     limit: number;
-//     skip: number;
-//     numPages: number;
-//     currentPage: number;
-//   };
-//   data: {
-//     allMdx: {
-//       edges: {
-//         node: {
-//           frontmatter: {
-//             slug: string;
-//             title: string;
-//             excerpt: string;
-//             date: string;
-//           };
-//         };
-//       }[];
-//     };
-//   };
-// }
+interface PropsItf {
+  pageContext: {
+    limit: number;
+    skip: number;
+    numPages: number;
+    currentPage: number;
+  };
+  data: {
+    allMdx: {
+      edges: {
+        node: {
+          frontmatter: {
+            slug: string;
+            title: string;
+            excerpt: string;
+            date: string;
+          };
+        };
+      }[];
+    };
+  };
+}
 
-const AllPosts = ({ pageContext, data }) => {
+const AllPosts: React.FC<PropsItf> = ({ pageContext, data }) => {
   const { currentPage, numPages } = pageContext;
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
