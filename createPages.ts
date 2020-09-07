@@ -1,9 +1,27 @@
+import { GatsbyNode } from 'gatsby';
 const path = require(`path`);
 
-export default async ({ graphql, actions }: any) => {
+interface DataItf {
+  data?: {
+    allMdx: {
+      edges: {
+        node: {
+          frontmatter: {
+            slug: string;
+            title: string;
+            excerpt: string;
+            date: string;
+          };
+        };
+      }[];
+    };
+  };
+}
+
+const createPages: GatsbyNode["createPages"] = async ({ graphql, actions }) => {
   // **Note:** The graphql function call returns a Promise
   // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
-  const { data } = await graphql(`
+  const { data } : DataItf = await graphql(`
     query {
       allMdx(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
@@ -17,6 +35,7 @@ export default async ({ graphql, actions }: any) => {
       }
     }
   `);
+  if (!data) return;
 
   // create paginated pages for posts
   const postPerPage = 5;
@@ -45,3 +64,4 @@ export default async ({ graphql, actions }: any) => {
     });
   });
 };
+export default createPages;

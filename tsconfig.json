@@ -36,10 +36,10 @@
     "webpack",
     "jest",
     "src/setupTests.ts",
-    "gatsby-node.ts"
   ],
   "include": [
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "createPages.ts"
   ]
 }
