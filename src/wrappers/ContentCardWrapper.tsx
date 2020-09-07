@@ -6,4 +6,10 @@ export const ContentCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  .content-title {
+    text-decoration: none;
+    &:hover {
+      filter: brightness(90%);
+    }
+  }
 `;

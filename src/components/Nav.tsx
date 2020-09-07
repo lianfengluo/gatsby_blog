@@ -3,6 +3,7 @@ import { useStaticQuery, Link, graphql } from 'gatsby';
 import { NavWrapper } from 'src/wrappers';
 
 export const Nav: React.FC<{}> = () => {
+  const path = typeof window !== 'undefined' ? window.location.pathname : '';
   const data = useStaticQuery(graphql`
     query {
       logo: file(relativePath: { eq: "logo.svg" }) {
@@ -15,6 +16,11 @@ export const Nav: React.FC<{}> = () => {
       <Link to="/">
         <img src={data.logo.publicURL} alt="My logo" />
       </Link>
+      {path !== '/' && (
+        <Link to="/" className="go-back">
+          ⬅
+        </Link>
+      )}
     </NavWrapper>
   );
 };

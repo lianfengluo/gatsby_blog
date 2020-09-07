@@ -1,12 +1,20 @@
 import styled from 'styled-components';
 
 interface PItf {
-  size?: 'xs' | 's' | 'm';
+  size?: 'xs' | 's' | 'm' | string;
   margin?: string;
   textDecoration?: string;
-  color?: 'dark1' | 'dark2' | 'dark3' | 'light1' | 'light2' | 'red';
+  color?:
+    | 'dark1'
+    | 'dark2'
+    | 'dark3'
+    | 'dark4'
+    | 'light1'
+    | 'light2'
+    | 'red'
+    | string;
   textAlign?: string;
-  weight?: 'normal' | 'bold';
+  weight?: 'normal' | 'bold' | string;
   theme: any;
 }
 
@@ -14,7 +22,15 @@ interface HeaderItf {
   size?: string;
   margin?: string;
   textDecoration?: string;
-  color?: 'dark1' | 'dark2' | 'dark3' | 'light1' | 'light2' | 'red';
+  color?:
+    | 'dark1'
+    | 'dark2'
+    | 'dark3'
+    | 'dark4'
+    | 'light1'
+    | 'light2'
+    | 'red'
+    | string;
   textAlign?: string;
   weight?: 'normal' | 'bold';
   theme: any;
@@ -31,7 +47,7 @@ export const P = styled.p<PItf>`
       case 'xs':
         return '0.875rem';
       default:
-        return '1.125rem';
+        return props.size || '1.125rem';
     }
   }};
 
@@ -44,7 +60,7 @@ export const P = styled.p<PItf>`
       case 'xs':
         return '1.125rem';
       default:
-        return '1.4375rem';
+        return props.size || '1.4375rem';
     }
   }};
 
@@ -56,7 +72,7 @@ export const P = styled.p<PItf>`
       case 'bold':
         return '700';
       default:
-        return '400';
+        return props.weight || '400';
     }
   }};
   color: ${(props: PItf) => {
@@ -67,6 +83,8 @@ export const P = styled.p<PItf>`
         return props.theme.colors.dark2;
       case 'dark3':
         return props.theme.colors.dark3;
+      case 'dark4':
+        return props.theme.colors.dark4;
       case 'light1':
         return props.theme.colors.light1;
       case 'light2':
@@ -74,16 +92,16 @@ export const P = styled.p<PItf>`
       case 'red':
         return props.theme.colors.red;
       default:
-        return props.theme.colors.dark1;
+        return props.color || props.theme.colors.dark1;
     }
   }};
   text-align: ${(props: PItf) => props.textAlign || 'left'};
 `;
 
 export const H1 = styled.h1<HeaderItf>`
-  font-size: 2.25rem;
+  font-size: ${(props) => props.size || '2.25rem'};
   line-height: 2.5rem;
-  color: ${(props: any) => {
+  color: ${(props) => {
     switch (props.color) {
       case 'dark1':
         return props.theme.colors.dark1;
@@ -91,6 +109,8 @@ export const H1 = styled.h1<HeaderItf>`
         return props.theme.colors.dark2;
       case 'dark3':
         return props.theme.colors.dark3;
+      case 'dark4':
+        return props.theme.colors.dark4;
       case 'light1':
         return props.theme.colors.light1;
       case 'light2':
@@ -98,13 +118,13 @@ export const H1 = styled.h1<HeaderItf>`
       case 'red':
         return props.theme.colors.red;
       default:
-        return props.theme.colors.dark1;
+        return props.color || props.theme.colors.dark1;
     }
   }};
 
-  font-weight: 400;
-  text-align: ${(props: any) => props.textAlign || 'left'};
-  margin: ${(props: any) => props.margin || 0};
+  font-weight: ${(props) => props.weight || 400};
+  text-align: ${(props) => props.textAlign || 'left'};
+  margin: ${(props) => props.margin || 0};
 `;
 
 export const H2 = styled.h2<HeaderItf>`
@@ -118,12 +138,14 @@ export const H2 = styled.h2<HeaderItf>`
         return props.theme.colors.dark2;
       case 'dark3':
         return props.theme.colors.dark3;
+      case 'dark4':
+        return props.theme.colors.dark4;
       case 'light1':
         return props.theme.colors.light1;
       case 'light2':
         return props.theme.colors.light2;
       default:
-        return props.theme.colors.dark1;
+        return props.color || props.theme.colors.dark1;
     }
   }};
 

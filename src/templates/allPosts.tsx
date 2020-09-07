@@ -46,11 +46,17 @@ const AllPosts: React.FC<PropsItf> = ({ pageContext, data }) => {
       <SEO />
       <FeatureImage />
       <Content>
-        <H1 textAlign="center" margin="0 0 1rem 0">
+        <H1
+          textAlign="center"
+          size="4rem"
+          weight={'bold'}
+          margin="0 0 1rem 0"
+          color={'rgb(26.1%, 56.6%, 99.7%)'}
+        >
           Richard's Blog
         </H1>
-        <P color="dark2" textAlign="center">
-          This is the blog built using gatsby/typescript.
+        <P color="dark3" textAlign="center">
+          This is the blog built using gatsby / typescript.
         </P>
         {posts.map((post) => (
           <ContentCard
@@ -59,7 +65,7 @@ const AllPosts: React.FC<PropsItf> = ({ pageContext, data }) => {
             title={post.node.frontmatter.title}
             excerpt={post.node.frontmatter.excerpt}
             slug={post.node.frontmatter.slug}
-          ></ContentCard>
+          />
         ))}
       </Content>
       {numPages !== 1 && (
