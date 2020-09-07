@@ -50,7 +50,7 @@ const singlePost: React.FC<postItf> = ({ data }) => {
 export default singlePost;
 
 export const pageQuery = graphql`
-  query SinglePostQuery($id: String!) {
+  query singlePostQuery($id: String!) {
     mdx(id: { eq: $id }) {
       body
       frontmatter {
