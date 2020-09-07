@@ -47,7 +47,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const slug = edges.node.frontmatter.slug;
     const id = edges.node.id;
     actions.createPage({
-      path: `/${slug}`,
+      path: slug,
       component: path.resolve(__dirname, './src/templates/singlePost.tsx'),
       context: { id },
     });
