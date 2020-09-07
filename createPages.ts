@@ -43,7 +43,7 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
   for (let i = 0; i < numPages; ++i) {
     actions.createPage({
       path: i === 0 ? '/' : `/${i + 1}`,
-      component: path.resolve(__dirname, './src/templates/AllPosts.tsx'),
+      component: path.resolve(__dirname, './src/templates/allPosts.tsx'),
       context: {
         limit: postPerPage,
         skip: i * postPerPage,
@@ -59,7 +59,7 @@ export const createPages: GatsbyNode["createPages"] = async ({ graphql, actions 
     const id = edge.node.id;
     actions.createPage({
       path: `/${slug}`,
-      component: path.resolve(__dirname, './src/templates/SinglePost.tsx'),
+      component: path.resolve(__dirname, './src/templates/singlePost.tsx'),
       context: { id },
     });
   });
