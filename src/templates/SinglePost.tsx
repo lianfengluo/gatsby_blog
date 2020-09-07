@@ -5,7 +5,7 @@ import { Container, Post, FeatureImage, SEO } from 'src/components';
 import { H1 } from 'src/wrappers';
 import { FluidObject } from 'gatsby-image';
 
-interface AllPostsItf {
+interface postItf {
   pageContext: {
     id: string;
   };
@@ -27,7 +27,7 @@ interface AllPostsItf {
     };
   };
 }
-const SinglePost: React.FC<AllPostsItf> = ({ data }) => {
+const singlePost: React.FC<postItf> = ({ data }) => {
   const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fluid;
   const SEOImage = data.mdx.frontmatter.featureImage.publicURL;
 
@@ -47,7 +47,7 @@ const SinglePost: React.FC<AllPostsItf> = ({ data }) => {
   );
 };
 
-export default SinglePost;
+export default singlePost;
 
 export const pageQuery = graphql`
   query SinglePostQuery($id: String!) {

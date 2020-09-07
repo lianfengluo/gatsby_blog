@@ -10,7 +10,7 @@ import {
 } from 'src/components';
 import { H1, P } from 'src/wrappers';
 
-interface AllPostsItf {
+interface PostsItf {
   pageContext: {
     limit: number;
     skip: number;
@@ -33,7 +33,7 @@ interface AllPostsItf {
   };
 }
 
-const AllPosts: React.FC<AllPostsItf> = ({ pageContext, data }) => {
+const allPosts: React.FC<PostsItf> = ({ pageContext, data }) => {
   const { currentPage, numPages } = pageContext;
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
@@ -74,10 +74,10 @@ const AllPosts: React.FC<AllPostsItf> = ({ pageContext, data }) => {
   );
 };
 
-export default AllPosts;
+export default allPosts;
 
 export const pageQuery = graphql`
-  query AllPostsQuery($skip: Int!, $limit: Int!) {
+  query allPostsQuery($skip: Int!, $limit: Int!) {
     allMdx(
       sort: { fields: frontmatter___date, order: DESC }
       skip: $skip
