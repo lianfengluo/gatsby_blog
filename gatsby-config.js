@@ -9,13 +9,13 @@ module.exports = {
   siteMetadata: {
     title: 'My MDX blog',
     description: 'A simple blog built with MDX and Gatsby.',
-    url: 'https://skillthrive.com',
-    image: '/SE.jpg',
+    url: 'https://github.com/lianfengluo',
+    image: 'SE.jpg',
     github: 'lianfengluo',
     author: 'Richard',
   },
+  pathPrefix: '/',
   plugins: [
-    // `gatsby-plugin-graphql-codegen`,
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
@@ -43,17 +43,18 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.md`, `.mdx`],
         gatsbyRemarkPlugins: [
+          'gatsby-remark-copy-linked-files',
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1200,
+              maxWidth: 800,
             },
           },
         ],
@@ -70,5 +71,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-catch-links`,
   ],
 };

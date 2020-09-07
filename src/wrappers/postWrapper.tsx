@@ -79,6 +79,11 @@ export const PostWrapper = styled.main<PropsItf>`
     border-radius: 0.2rem;
   }
 
+  img {
+    max-width: 672px;
+    object-fit: fill;
+  }
+
   blockquote p {
     font-style: italic;
     font-size: 1.5rem;
