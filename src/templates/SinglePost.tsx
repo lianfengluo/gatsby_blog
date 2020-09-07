@@ -5,28 +5,6 @@ import { Container, Post, FeatureImage, SEO } from 'src/components';
 import { H1 } from 'src/wrappers';
 import { FluidObject } from 'gatsby-image';
 
-export const pageQuery = graphql`
-  query singlePostQuery($id: String!) {
-    mdx(id: { eq: $id }) {
-      body
-      frontmatter {
-        title
-        slug
-        excerpt
-        date(formatString: "MMMM DD, YYYY")
-        featureImage {
-          publicURL
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
 interface postItf {
   pageContext: {
     id: string;
@@ -70,3 +48,25 @@ const SinglePost: React.FC<postItf> = ({ data }) => {
 };
 
 export default SinglePost;
+
+export const pageQuery = graphql`
+  query SinglePostQuery($id: String!) {
+    mdx(id: { eq: $id }) {
+      body
+      frontmatter {
+        title
+        slug
+        excerpt
+        date(formatString: "MMMM DD, YYYY")
+        featureImage {
+          publicURL
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`;
