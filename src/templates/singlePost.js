@@ -5,30 +5,30 @@ import { Container, Post, FeatureImage, SEO } from 'src/components';
 import { H1 } from 'src/wrappers';
 import { FluidObject } from 'gatsby-image';
 
-interface PostItf {
-  pageContext: {
-    id: string;
-  };
-  data: {
-    mdx: {
-      body: string;
-      frontmatter: {
-        slug: string;
-        title: string;
-        excerpt: string;
-        featureImage: {
-          publicURL: string;
-          childImageSharp: {
-            fluid: FluidObject | FluidObject[];
-          };
-        };
-        date: string;
-      };
-    };
-  };
-}
+// interface PostItf {
+//   pageContext: {
+//     id: string;
+//   };
+//   data: {
+//     mdx: {
+//       body: string;
+//       frontmatter: {
+//         slug: string;
+//         title: string;
+//         excerpt: string;
+//         featureImage: {
+//           publicURL: string;
+//           childImageSharp: {
+//             fluid: FluidObject | FluidObject[];
+//           };
+//         };
+//         date: string;
+//       };
+//     };
+//   };
+// }
 
-const SinglePost: React.FC<PostItf> = ({ data }) => {
+const SinglePost = ({ data }) => {
   const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fluid;
   const SEOImage = data.mdx.frontmatter.featureImage.publicURL;
 

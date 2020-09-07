@@ -10,37 +10,37 @@ import {
 } from 'src/components';
 import { H1, P } from 'src/wrappers';
 
-interface PostsItf {
-  pageContext: {
-    limit: number;
-    skip: number;
-    numPages: number;
-    currentPage: number;
-  };
-  data: {
-    allMdx: {
-      edges: {
-        node: {
-          frontmatter: {
-            slug: string;
-            title: string;
-            excerpt: string;
-            date: string;
-          };
-        };
-      }[];
-    };
-  };
-}
+// interface PostsItf {
+//   pageContext: {
+//     limit: number;
+//     skip: number;
+//     numPages: number;
+//     currentPage: number;
+//   };
+//   data: {
+//     allMdx: {
+//       edges: {
+//         node: {
+//           frontmatter: {
+//             slug: string;
+//             title: string;
+//             excerpt: string;
+//             date: string;
+//           };
+//         };
+//       }[];
+//     };
+//   };
+// }
 
-const AllPosts: React.FC<PostsItf> = ({ pageContext, data }) => {
+const AllPosts = ({ pageContext, data }) => {
   const { currentPage, numPages } = pageContext;
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
   const previousPage = currentPage - 1 === 1 ? '/' : `/${currentPage - 1}`;
   const nextPage = `${currentPage + 1}`;
 
-  const posts: any[] = data.allMdx.edges;
+  const posts = data.allMdx.edges;
   return (
     <Container>
       <SEO />
