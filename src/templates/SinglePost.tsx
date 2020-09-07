@@ -5,7 +5,7 @@ import { Container, Post, FeatureImage, SEO } from 'src/components';
 import { H1 } from 'src/wrappers';
 import { FluidObject } from 'gatsby-image';
 
-interface postItf {
+interface PostItf {
   pageContext: {
     id: string;
   };
@@ -27,7 +27,8 @@ interface postItf {
     };
   };
 }
-const SinglePost: React.FC<postItf> = ({ data }) => {
+
+const SinglePost: React.FC<PostItf> = ({ data }) => {
   const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fluid;
   const SEOImage = data.mdx.frontmatter.featureImage.publicURL;
 
