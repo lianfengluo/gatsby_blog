@@ -27,7 +27,7 @@ interface postItf {
     };
   };
 }
-const singlePost: React.FC<postItf> = ({ data }) => {
+const SinglePost: React.FC<postItf> = ({ data }) => {
   const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fluid;
   const SEOImage = data.mdx.frontmatter.featureImage.publicURL;
 
@@ -47,10 +47,10 @@ const singlePost: React.FC<postItf> = ({ data }) => {
   );
 };
 
-export default singlePost;
+export default SinglePost;
 
 export const pageQuery = graphql`
-  query singlePostQuery($id: String!) {
+  query SinglePostQuery($id: String!) {
     mdx(id: { eq: $id }) {
       body
       frontmatter {

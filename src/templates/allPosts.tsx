@@ -33,7 +33,7 @@ interface PostsItf {
   };
 }
 
-const allPosts: React.FC<PostsItf> = ({ pageContext, data }) => {
+const AllPosts: React.FC<PostsItf> = ({ pageContext, data }) => {
   const { currentPage, numPages } = pageContext;
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
@@ -74,10 +74,10 @@ const allPosts: React.FC<PostsItf> = ({ pageContext, data }) => {
   );
 };
 
-export default allPosts;
+export default AllPosts;
 
 export const pageQuery = graphql`
-  query allPostsQuery($skip: Int!, $limit: Int!) {
+  query AllPostsQuery($skip: Int!, $limit: Int!) {
     allMdx(
       sort: { fields: frontmatter___date, order: DESC }
       skip: $skip

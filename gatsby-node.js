@@ -32,7 +32,7 @@ exports.createPages = async ({ graphql, actions }) => {
   for (let i = 0; i < numPages; ++i) {
     actions.createPage({
       path: i === 0 ? '/' : `/${i + 1}`,
-      component: path.resolve(__dirname, './src/templates/allPosts.tsx'),
+      component: path.resolve(__dirname, './src/templates/AllPosts.tsx'),
       context: {
         limit: postPerPage,
         skip: i * postPerPage,
@@ -47,8 +47,8 @@ exports.createPages = async ({ graphql, actions }) => {
     const slug = edges.node.frontmatter.slug;
     const id = edges.node.id;
     actions.createPage({
-      path: slug,
-      component: path.resolve(__dirname, './src/templates/singlePost.tsx'),
+      path: `/${slug}`,
+      component: path.resolve(__dirname, './src/templates/SinglePost.tsx'),
       context: { id },
     });
   });
