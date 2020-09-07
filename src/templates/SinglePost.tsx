@@ -6,7 +6,7 @@ import { H1 } from 'src/wrappers';
 import { FluidObject } from 'gatsby-image';
 
 export const pageQuery = graphql`
-  query SinglePostQuery($id: String!) {
+  query singlePostQuery($id: String!) {
     mdx(id: { eq: $id }) {
       body
       frontmatter {
