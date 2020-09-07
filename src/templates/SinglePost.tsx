@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Container, Post, FeatureImage } from 'src/components';
+import { Container, Post, FeatureImage, SEO } from 'src/components';
 import { H1 } from 'src/wrappers';
 import { FluidObject } from 'gatsby-image';
 
@@ -15,7 +15,9 @@ interface AllPostsItf {
       frontmatter: {
         slug: string;
         title: string;
+        excerpt: string;
         featureImage: {
+          publicURL: string;
           childImageSharp: {
             fluid: FluidObject | FluidObject[];
           };
@@ -27,8 +29,15 @@ interface AllPostsItf {
 }
 const SinglePost: React.FC<AllPostsItf> = ({ data }) => {
   const featureImage = data.mdx.frontmatter.featureImage.childImageSharp.fluid;
+  const SEOImage = data.mdx.frontmatter.featureImage.publicURL;
+
   return (
     <Container>
+      <SEO
+        title={data.mdx.frontmatter.title}
+        image={SEOImage}
+        description={data.mdx.frontmatter.excerpt}
+      />
       <FeatureImage fluid={featureImage} />
       <Post>
         <H1 margin="0 0 2rem 0">{data.mdx.frontmatter.title}</H1>
@@ -47,8 +56,10 @@ export const pageQuery = graphql`
       frontmatter {
         title
         slug
+        excerpt
         date(formatString: "MMMM DD, YYYY")
         featureImage {
+          publicURL
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid

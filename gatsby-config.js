@@ -5,7 +5,14 @@
  */
 const path = require('path');
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: 'My MDX blog',
+    description: 'A simple blog built with MDX and Gatsby.',
+    url: 'https://skillthrive.com',
+    image: '/SE.jpg',
+    github: 'lianfengluo',
+    author: 'Richard',
+  },
   plugins: [
     `gatsby-plugin-graphql-codegen`,
     {

@@ -6,6 +6,7 @@ import {
   ContentCard,
   FeatureImage,
   Pagination,
+  SEO,
 } from 'src/components';
 import { H1, P } from 'src/wrappers';
 
@@ -42,6 +43,7 @@ const AllPosts: React.FC<AllPostsItf> = ({ pageContext, data }) => {
   const posts: any[] = data.allMdx.edges;
   return (
     <Container>
+      <SEO />
       <FeatureImage />
       <Content>
         <H1 textAlign="center" margin="0 0 1rem 0">
