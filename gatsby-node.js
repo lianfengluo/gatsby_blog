@@ -1,3 +1,12 @@
+'use strict';
+
+/**
+ * Source-map-support mimics node's stack trace making debugging easier
+ * ts-node register helps importing and compiling TypeScript modules into JS
+ */
+require('source-map-support').install();
+require('ts-node').register();
+
 exports.createPages = async ({ graphql, actions }) => {
   // **Note:** The graphql function call returns a Promise
   // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
