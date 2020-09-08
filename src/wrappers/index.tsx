@@ -7,5 +7,5 @@ export * from './TypographyWrapper';
 export * from './ContentCardWrapper';
 export * from './ButtonWrapper';
 export * from './PaginationWrapper';
-export * from './postWrapper';
+export * from './PostWrapper';
 export * from './TableWrapper';

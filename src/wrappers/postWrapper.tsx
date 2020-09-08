@@ -22,6 +22,11 @@ export const PostWrapper = styled.main<PropsItf>`
   h6 {
     color: ${(props) => props.theme.colors.dark1};
   }
+
+  .post-title {
+    color: rgb(26.1%, 56.6%, 99.7%);
+  }
+
   h1:not(:first-child),
   h2,
   h3,
