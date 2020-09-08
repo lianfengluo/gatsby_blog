@@ -85,7 +85,7 @@ export const PostWrapper = styled.main<PropsItf>`
   }
 
   img {
-    max-width: 672px;
+    max-width: 100%;
     object-fit: fill;
   }
 
