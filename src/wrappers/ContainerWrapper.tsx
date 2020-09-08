@@ -8,11 +8,11 @@ export const ContainerWrapper = styled.div`
   gap: 0 2rem;
 
   @media ${(props) => props.theme.breakpoints.tablet} {
-    grid-template-columns: 2rem repeat(6, 1fr) 2rem;
+    grid-template-columns: 2rem repeat(6, minmax(7.2rem, auto)) 2rem;
     gap: 0 1rem;
   }
 
   @media ${(props) => props.theme.breakpoints.mobile} {
-    grid-template-columns: 1rem repeat(6, 1fr) 1rem;
+    grid-template-columns: 1rem repeat(6, minmax(6.8rem, auto)) 1rem;
   }
 `;
