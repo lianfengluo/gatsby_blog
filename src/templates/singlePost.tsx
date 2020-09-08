@@ -41,7 +41,9 @@ const SinglePost: React.FC<PropsItf> = ({ data }) => {
       />
       <FeatureImage fluid={featureImage} />
       <Post>
-        <H1 margin="0 0 2rem 0">{data.mdx.frontmatter.title}</H1>
+        <H1 margin="0 0 2rem 0" className={'post-title'} weight={700}>
+          {data.mdx.frontmatter.title}
+        </H1>
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </Post>
     </Container>

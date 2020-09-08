@@ -32,7 +32,7 @@ interface HeaderItf {
     | 'red'
     | string;
   textAlign?: string;
-  weight?: 'normal' | 'bold';
+  weight?: 'normal' | 'bold' | number | string;
   theme: any;
 }
 
