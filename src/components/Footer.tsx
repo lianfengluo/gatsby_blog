@@ -19,6 +19,9 @@ export const Footer: React.FC<{}> = () => {
       linkedin: file(relativePath: { eq: "linkedin.svg" }) {
         publicURL
       }
+      portfolio: file(relativePath: { eq: "portfolio.svg" }) {
+        publicURL
+      }
     }
   `);
   return (
@@ -46,9 +49,17 @@ export const Footer: React.FC<{}> = () => {
           >
             <img src={data.github.publicURL} alt="github icon" />
           </a>
+          <a
+            href="https://lianfengluo.github.io/portfolio/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={data.portfolio.publicURL} alt="portfolio icon" />
+          </a>
         </FooterSocialIcons>
         <P size="s" color="dark3">
-          © 2020 Richard 👋🏼👋🏼👋🏼👋🏼
+          © 2020 Richard{'  '}
+          👋🏼👋🏼👋🏼👋🏼
         </P>
       </FooterSocialWrapper>
     </FooterWrapper>
